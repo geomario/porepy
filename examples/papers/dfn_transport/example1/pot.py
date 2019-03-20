@@ -335,9 +335,9 @@ def main():
             plot_num_cells(data, method.replace("_", " "), title)
 
         # Andrea
-        #for method in methods_andrea:
-        #    data = folder_in + method + "/" + "num_cells_" + grid[2] + ".csv"
-        #    plot_num_cells(data, method.replace("_", " "), title)
+        for method in methods_andrea:
+            data = folder_in + method + "/" + "num_cells_" + grid[2] + ".csv"
+            plot_num_cells(data, method.replace("_", " "), title)
 
         name = grid_label + "_num_cells"
         save_single(name, folder_out)
