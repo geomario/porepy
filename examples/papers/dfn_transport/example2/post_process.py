@@ -104,7 +104,7 @@ def cot_domain(file_in, step, field, num_frac, padding=6):
 
 #------------------------------------------------------------------------------#
 
-def main():
+if __name__ == "__main__":
 
     field = "scalar"
     n_step = 500
@@ -156,6 +156,3 @@ def main():
             file_in = folder_in + "outflow.csv"
             file_out = folder_out + "production_" + grid + ".csv"
             shutil.copy(file_in, file_out)
-
-if __name__ == "__main__":
-    main()

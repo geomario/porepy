@@ -62,7 +62,7 @@ def main():
     discretizations = compute.get_discr()
 
     # geometric tolerance
-    tol = 1e-2
+    tol = 1e-4
 
     mesh_size = 1e2  # np.power(2., -4)
     mesh_kwargs = {"mesh_size_frac": mesh_size, "mesh_size_min": mesh_size / 20}
@@ -117,7 +117,7 @@ def main():
 
             folder = "solution_" + discr_key + "_" + bc_type_key
 
-            network = pp.fracture_importer.network_3d_from_fab(file_name)
+            network = pp.fracture_importer.network_3d_from_fab(file_name, tol=tol)
             gb = network.mesh(mesh_kwargs, dfn=True)
 
             gb.remove_nodes(lambda g: g.dim == 0)
